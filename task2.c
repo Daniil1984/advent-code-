@@ -10,7 +10,7 @@ char *oxygen(char **numbers, int size, int j);
 char *CO2(char **numbers, int size, int j);
 
 int main(int argc, char *argv[argc])
-{   
+{
     FILE *input;
     if (argc != 2) {
         return 1;
@@ -86,7 +86,7 @@ int main(int argc, char *argv[argc])
 }
 
 char *take_number(FILE *input)
-{   
+{
     char *number = NULL;
     int length = 0;
     char c;
@@ -104,7 +104,7 @@ char *take_number(FILE *input)
 }
 
 int gamma_epsilon(int *count_of_1, int size, int count)
-{   
+{
     int gamma = 0;
     int epsilon = 0;
     for (int i = size - 1; i >= 0; i--) {
@@ -120,7 +120,7 @@ int gamma_epsilon(int *count_of_1, int size, int count)
 }
 
 int to_decimal(char *number)
-{   
+{
     int num = 0;
     int len = strlen(number);
     for (int i = 0; i < len; i++) {
@@ -130,7 +130,7 @@ int to_decimal(char *number)
 }
 
 char often_bit(char **numbers, int size, int j)
-{   
+{
     int count_1 = 0;
     int count_0 = 0;
     for (int i = 0; i < size; i++) {
@@ -150,7 +150,7 @@ char often_bit(char **numbers, int size, int j)
 }
 
 char *oxygen(char **numbers, int size, int j)
-{   
+{
     if (size == 1) {
         return numbers[0];
     }
