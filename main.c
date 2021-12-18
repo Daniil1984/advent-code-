@@ -3,33 +3,39 @@
 int main(void)
 {
     int count = 0;
-    int first;
-    int second;
-    int third;
+    int v1;
+    int v2;
+    int v3;
     int sum;
     int changes = 0;
-    if (scanf("%d", &first) != 1 || scanf("%d", &second) != 1 
-        || scanf("%d", &third) != 1) {
+    int scan1;
+    int scan2;
+    int scan3;
+    scan1 = scanf("%d", &v1);
+    scan2 = scanf("%d", &v2);
+    scan3 = scanf("%d", &v3);
+
+    if (scan1 != 1 || scan2 != 1 || scan3 != 1) {
         return -1;
     }
-    if (second > first) {
+    if (v2 > v1) {
         count++;
     }
-    sum = first + second + third;
-    first = second;
-    second = third;
-    while (scanf("%d", &third) == 1) {
-        if (second > first) {
+    sum = v1 + v2 + v3;
+    v1 = v2;
+    v2 = v3;
+    while (scanf("%d", &v3) == 1) {
+        if (v2 > v1) {
             count++;
         }
-        if (first + second + third > sum) {
+        if (v1 + v2 + v3 > sum) {
             changes++;
         }
-        sum = first + second + third;
-        first = second;
-        second = third;
+        sum = v1 + v2 + v3;
+        v1 = v2;
+        v2 = v3;
     }
-    if (second > first) {
+    if (v2 > v1) {
         count++;
     }
     printf("%d\n%d\n", count, changes);
