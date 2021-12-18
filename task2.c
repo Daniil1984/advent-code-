@@ -52,8 +52,10 @@ int main(int argc, char *argv[argc])
     }
     while ((number = take_number(input)) != NULL) {
         if (number[0] == often) {
-            numbers_often = realloc(numbers_often, (size_numbers_often + 1) * sizeof(char *));
-            numbers_often[size_numbers_often] = malloc((size + 1) * sizeof(char));
+            numbers_often = realloc(numbers_often,
+                                    (size_numbers_often + 1) * sizeof(char *));
+            numbers_often[size_numbers_often] =
+                malloc((size + 1) * sizeof(char));
             numbers_often[size_numbers_often] = number;
             size_numbers_often++;
         }
@@ -70,7 +72,8 @@ int main(int argc, char *argv[argc])
     }
     while ((number = take_number(input)) != NULL) {
         if (number[0] == rare) {
-            numbers_rare = realloc(numbers_rare, (size_numbers_rare + 1) * sizeof(char *));
+            numbers_rare =
+                realloc(numbers_rare, (size_numbers_rare + 1) * sizeof(char *));
             numbers_rare[size_numbers_rare] = malloc((size + 1) * sizeof(char));
             numbers_rare[size_numbers_rare] = number;
             size_numbers_rare++;
@@ -164,7 +167,8 @@ char *oxygen(char **numbers, int size, int j)
     for (int i = 0; i < size; i++) {
         if (len - 1 >= j) {
             if (numbers[i][j] == often) {
-                new_numbers = realloc(new_numbers, (new_size + 1) * sizeof(char *));
+                new_numbers =
+                    realloc(new_numbers, (new_size + 1) * sizeof(char *));
                 new_numbers[new_size] = malloc((len + 1) * sizeof(char));
                 new_numbers[new_size] = numbers[i];
                 new_size++;
@@ -192,7 +196,8 @@ char *CO2(char **numbers, int size, int j)
     for (int i = 0; i < size; i++) {
         if (len - 1 >= j) {
             if (numbers[i][j] == rare) {
-                new_numbers = realloc(new_numbers, (new_size + 1) * sizeof(char *));
+                new_numbers =
+                    realloc(new_numbers, (new_size + 1) * sizeof(char *));
                 new_numbers[new_size] = malloc((len + 1) * sizeof(char));
                 new_numbers[new_size] = numbers[i];
                 new_size++;
