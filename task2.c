@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 char *take_number(FILE *input);
 int gamma_epsilon(int *count_of_1, int size, int count);
