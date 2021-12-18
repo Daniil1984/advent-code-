@@ -21,7 +21,7 @@ int main(int argc, char *argv[argc])
     char *number;
     int count = 0;
     while ((number = take_number(input)) != NULL) {
-        int len = strlen(number);
+        int len = (int)strlen(number);
         if (size == 0) {
             count_of_1 = realloc(count_of_1, len * sizeof(int));
             for (int i = size; i < len; i++) {
@@ -106,7 +106,7 @@ char *take_number(FILE *input)
     return number;
 }
 
-int gamma_epsilon(int *count_of_1, int size, int count)
+int gamma_epsilon(int const *count_of_1, int size, int count)
 {
     int gamma = 0;
     int epsilon = 0;
@@ -125,7 +125,7 @@ int gamma_epsilon(int *count_of_1, int size, int count)
 int to_decimal(char *number)
 {
     int num = 0;
-    int len = strlen(number);
+    int len = (int)strlen(number);
     for (int i = 0; i < len; i++) {
         num = 2 * num + (int)number[i] - (int)'0';
     }
@@ -159,7 +159,7 @@ char *oxygen(char **numbers, int size, int j)
     }
     char **new_numbers = NULL;
     int new_size = 0;
-    int len = strlen(numbers[0]);
+    int len = (int)strlen(numbers[0]);
     char often = often_bit(numbers, size, j);
     if (often == '2') {
         often = '1';
@@ -186,7 +186,7 @@ char *CO2(char **numbers, int size, int j)
     }
     char **new_numbers = NULL;
     int new_size = 0;
-    int len = strlen(numbers[0]);
+    int len = (int)strlen(numbers[0]);
     char rare = often_bit(numbers, size, j);
     if (rare == '1' || rare == '2') {
         rare = '0';
